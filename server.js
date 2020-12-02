@@ -16,7 +16,7 @@ function BotInit() {
         var reply = 'Imposto é roubo';
         var nameID = tweet.id_str;
         var name = tweet.user.screen_name;
-        Bot.post('statuses/update', {in_reply_to_status_id: nameID, status: reply + ' @' + name}, () => null);
+        if(name != 'botimposto') Bot.post('statuses/update', {in_reply_to_status_id: nameID, status: reply + ' @' + name}, () => null);
     });
 
 }
